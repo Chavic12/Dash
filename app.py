@@ -328,7 +328,7 @@ def render_page_content(pathname, selected_year, start_month, end_month, start_d
                 for i, fig in enumerate(fig_list):
                     img = Image(f'figure_{i}.png')
                     sheet.add_image(img, f'J{(i * 20) + 1}')  # Ajustar posición de las imágenes
-            return html.Div(content_parts), dcc.send_file('output.xlsx')  # Enviar el archivo Excel para descargar
+            return html.Div(content_parts), dcc.send_file('reporte.xlsx')  # Enviar el archivo Excel para descargar
 
         return html.Div(content_parts), None
 
