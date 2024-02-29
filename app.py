@@ -318,7 +318,7 @@ def render_page_content(pathname, selected_year, start_month, end_month, start_d
             content_parts.append(dcc.Graph(figure=fig))
 
         if n_clicks:
-            with pd.ExcelWriter('output.xlsx', engine='openpyxl') as excel_writer:
+            with pd.ExcelWriter('reporte.xlsx', engine='openpyxl') as excel_writer:
                 sheet_name = 'All_Figures'
                 for i, fig in enumerate(fig_list):
                     fig.write_image(f'figure_{i}.png')  # Guardar la figura como imagen
@@ -400,7 +400,7 @@ sidebar = html.Div(
         html.Hr(),
 
     dcc.Download(id="download"),  # Componente para descargar archivos
-    dbc.Button("Exportar a Excel", id="export-button", color="primary", className="mr-2"),
+    dbc.Button("Descargar Reporte", id="export-button", color="primary", className="mr-2"),
 
 
     ],
