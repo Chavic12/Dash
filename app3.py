@@ -14,6 +14,7 @@ FA = "https://use.fontawesome.com/releases/v5.15.3/css/all.css"
 
 # Crear aplicación Dash
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP, FA])
+server = app.server
 
 # Leer el archivo CSV
 df = pd.read_csv('datosReto1.csv', sep=';',parse_dates=['fechaInicio', 'diaDelMes'], dayfirst=True)
